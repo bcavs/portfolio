@@ -1,0 +1,42 @@
+.header-content-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    justify-items: center;
+    gap:15px;
+    grid-template-areas: "logo" "personal-info" "links";
+    #personal-info{
+        grid-area: personal-info;
+        display: flex;
+        justify-content: space-between;
+        flex-flow: column;
+        .favorite-tools{
+            margin-top:20px;
+            .tool-logos-container{
+                display:flex;
+                //   justify-content:space-between;
+                  align-items:flex-start;
+                .tool{
+                    margin: 0 10px 0 0;
+                    width: 50px;
+                    height: 50px;
+                    background-color: rgba(255,255,255,0.3);
+                }
+            }
+        }
+    }
+    #logo{
+        grid-area: logo;
+    }
+    #nav-links{
+        grid-area: links;
+        .mail-icon{
+            display: inline-block;
+        }
+    }
+    @screen md{
+        grid-template-areas: "personal-info logo links";
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
