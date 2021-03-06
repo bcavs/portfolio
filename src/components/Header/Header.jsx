@@ -34,7 +34,7 @@ const Header = ({ siteTitle }) => (
           width={200}
           quality={95}
           formats={["AUTO", "WEBP", "AVIF"]}
-          alt="Ben Cavenagh Logo"
+          alt="Ben's Logo"
         />
       </div>
       <div id="nav-links" className="md:justify-self-end">
