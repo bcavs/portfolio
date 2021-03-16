@@ -7,30 +7,35 @@
     font-family: 'Proxima Nova';
     font-weight: 100;
     src: local('Proxima Nova'), url(../fonts/Proxima-Nova-Thin.otf) format('opentype');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Proxima Nova';
     font-weight: 400;
     src: local('Proxima Nova'), url(../fonts/Proxima-Nova-Regular.otf) format('opentype');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Proxima Nova';
     font-weight: 700;
     src: local('Proxima Nova'), url(../fonts/Proxima-Nova-Bold.otf) format('opentype');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Proxima Nova';
     font-weight: 800;
     src: local('Proxima Nova'), url(../fonts/Proxima-Nova-Extrabold.otf) format('opentype');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Proxima Nova';
     font-weight: 900;
     src: local('Proxima Nova'), url(../fonts/Proxima-Nova-Black.otf) format('opentype');
+    font-display: swap;
 }
 
 @layer base {
