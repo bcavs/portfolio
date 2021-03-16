@@ -10,9 +10,11 @@ import PreviousEmployers from "../components/PreviousEmployers"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
+    <section id="personal-intro" className="flex justify-center container">
+      <p className="text-2xl text-center leading-normal my-12 max-w-4xl">
+        Hi! I'm <span className="text-electric-purple font-bold">Ben</span>, a <span className="text-electric-purple font-bold">fullstack web developer</span> that loves working with modern web development technologies like <span className="text-electric-purple">Gatsby</span>, <span className="text-electric-purple">Svelte</span>, <span className="text-electric-purple">React</span>, and <span className="text-electric-purple">React Native</span>. With over <span className="text-electric-purple font-bold">6 years of experience</span>, I have built projects ranging from mobile apps for startups to websites for international corporations.
+      </p>
+    </section>
     <PreviousEmployers/>
     <p>
       <Link to="/page-2/">Go to page 2</Link> <br />

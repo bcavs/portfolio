@@ -8,6 +8,9 @@ module.exports = {
         "sky-blue": "#00D4FF",
         "electric-purple": "#635BFF",
       },
+      fontFamily:{
+        'proxima': ['Proxima Nova', 'Helvetica', 'Arial', 'sans-serif']
+      }
     },
   },
   variants: {

@@ -16,7 +16,7 @@ const Header = ({ siteTitle }) => (
           <h3 className="text-gray-400">
             <span className="uppercase">Web Developer</span>
             {" "} at {" "} 
-            <span className="text-red-500 uppercase font-bold">Grubhub</span>
+            <span className="text-red-500 uppercase font-extrabold">Grubhub</span>
           </h3>
         </div>
         <div className="favorite-tools">
