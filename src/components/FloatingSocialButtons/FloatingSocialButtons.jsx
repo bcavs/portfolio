@@ -1,8 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
 import { FaLinkedin, FaFacebook, FaGithub } from "react-icons/fa";
-
 
 import './FloatingSocialButtons.scss';
 

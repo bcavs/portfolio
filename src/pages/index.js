@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import PreviousEmployers from "../components/PreviousEmployers"
-import FloatingSocialButtons from '../components/FloatingSocialButtons'
+import ProjectsGroup from '../components/ProjectsGroup'
 
 
 const IndexPage = () => (
@@ -18,7 +18,10 @@ const IndexPage = () => (
       </p>
     </section>
     <PreviousEmployers/>
-    
+    <hr className="my-6" style={{ maxWidth:"500px", padding:"0 30px", borderTopWidth: '2px', margin:"50px auto" }}/>
+    <div id="projects-section">
+      <ProjectsGroup/>
+    </div>
   </Layout>
 )
 
