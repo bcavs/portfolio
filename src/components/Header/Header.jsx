@@ -11,6 +11,7 @@ import GatsbyLogo from '../../images/svg/Gatsby.svg';
 import { HiMail } from "react-icons/hi";
 
 import "./Header.scss"
+import SocialButtons from "../SocialButtons";
 
 const Header = ({ siteTitle }) => (
   <header className="bg-dark-blue py-5 px-3 flex justify-center">
@@ -44,6 +45,7 @@ const Header = ({ siteTitle }) => (
       </div>
       <div id="nav-links" className="md:justify-self-end">
         <p className="bg-sky-blue text-dark-blue px-2 py-1 rounded font-bold">Contact me <HiMail className="mail-icon"/></p>
+        <SocialButtons />
       </div>
     </div>
   </header>

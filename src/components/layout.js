@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./Header"
-import FloatingSocialButtons from "./FloatingSocialButtons"
+import SocialButtons from "./SocialButtons"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -29,12 +29,11 @@ const Layout = ({ children }) => {
         <div
           style={{
             margin: `0 auto`,
-            padding: `0 4rem 1.45rem`,
+            padding: `0 1.5rem 1.45rem`,
             position:"relative"
           }}
           className="container"
           >
-          <FloatingSocialButtons/>
           <main>{children}</main>
           <footer
             style={{

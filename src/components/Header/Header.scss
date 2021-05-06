@@ -20,7 +20,10 @@
     }
     #logo{
         grid-area: logo;
-        max-width: 250px;
+        max-width: 200px;
+        display: flex;
+        align-self: center;
+        justify-content: center;
         svg{
             width: 100%;
         }
