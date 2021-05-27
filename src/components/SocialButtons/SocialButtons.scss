@@ -19,4 +19,16 @@
             height: 20px;
         }
     }
+    &.social-buttons-footer{
+        .social-logo-container{
+            background-color: transparent;
+            margin: 0;
+            width: 50px;height: 50px;
+            svg{
+                width: 30px;
+                height: 30px;
+            }
+        }
+        justify-content: flex-end;
+    }
 }

@@ -17,7 +17,7 @@ import './PreviousEmployers.scss';
 const PreviousEmployers = (props) => (
 
   <section className="md:mt-6">
-    <h2 className="uppercase text-center text-electric-purple font-bold">Who I've built for</h2>
+    <h2 className="uppercase text-center text-electric-purple font-bold">Who I've worked for</h2>
     <div className="flex justify-center mt-4">
       <LogoRow className="hidden lg:block"/>
       <Logo2Row className="hidden sm:block lg:hidden"/>

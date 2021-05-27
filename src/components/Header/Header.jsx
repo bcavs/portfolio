@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useContext } from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
@@ -13,8 +13,13 @@ import { HiMail } from "react-icons/hi";
 import "./Header.scss"
 import SocialButtons from "../SocialButtons";
 
-const Header = ({ siteTitle }) => (
-  <header className="bg-dark-blue py-5 px-3 flex justify-center">
+import { ContactFormContext } from "../../context"
+
+const Header = ({ siteTitle }) => {
+  const { openContactForm } = useContext(ContactFormContext)
+  
+  return(
+  <header className="bg-dark-blue py-12 px-3 flex justify-center">
     <div className="header-content-container || container items-center md:items-start justify-items-center">
       <div id="personal-info" className="md:justify-self-start">
         <div className="about-me">
@@ -41,16 +46,18 @@ const Header = ({ siteTitle }) => (
         </div>
       </div>
       <div id="logo">
-        <Logo/>
+        <Link to="/">
+          <Logo/>
+        </Link>
       </div>
       <div id="nav-links" className="md:justify-self-end">
-        <p className="bg-sky-blue text-dark-blue px-2 py-1 rounded font-bold">Contact me <HiMail className="mail-icon"/></p>
+        <button onClick={() => openContactForm()} className="bg-sky-blue text-dark-blue px-2 py-1 rounded font-bold">Contact me <HiMail className="mail-icon"/></button>
         <SocialButtons />
       </div>
     </div>
   </header>
 )
-
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

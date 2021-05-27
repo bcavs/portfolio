@@ -20,6 +20,7 @@ import AubryLane from "../../images/project-screenshots/Other/Aubry-Lane.png"
 import DailyDigi from "../../images/project-screenshots/Other/Daily-Digi.png"
 import Dunbar from "../../images/project-screenshots/Other/Dunbar.png"
 import Vault from "../../images/project-screenshots/Other/The-Vault.png"
+import { Link } from 'gatsby';
 
 const projects = [
   {
@@ -32,7 +33,8 @@ const projects = [
       { imageSrc: Corporate },
       { imageSrc: Get },
       { imageSrc: RestaurantHER },
-    ]
+    ],
+    link: "/grubhub"
   },
   {
     name: "Heartland FPG",
@@ -41,17 +43,19 @@ const projects = [
       { imageSrc: Splenda },
       { imageSrc: Javahouse },
       { imageSrc: PromiseBev },
-    ]
+    ],
+    link: "/hfpg"
   },
   {
     name: "Freelance/Personal",
     description:"Other projects I worked on for contracts or for fun",
     images:[
-      { imageSrc: Dunbar },
       { imageSrc: AubryLane },
-      { imageSrc: DailyDigi },
+      { imageSrc: Dunbar },
       { imageSrc: Vault },
-    ]
+      { imageSrc: DailyDigi },
+    ],
+    link: "/other"
   }
 ]
 
@@ -59,27 +63,31 @@ const ProjectsGroup = (props) => (
   <div className="projects-group container grid ">
     {projects.map((project, i) => {
       return(
-        <div className="project" key={i}>
-          <div className="project-image-container">
+        <Link to={project.link} className="project" key={i}>
+          <div 
+            className="project-image-container" 
+            >
             {project.images.map((image, j) => {
-              const randomRotate = (Math.random() * 16) - 5
-              const randomOffset = (Math.random() * 11) - 5
-              return(
-                <img 
-                  className={`project-image ${j === 0 ? "front" : "back"}-image`} 
-                  src={image.imageSrc} 
-                  key={j}
-                  style={{
-                    transform: `rotate(${j != 0 ? randomRotate : "0"}deg)`, 
-                    top: `${j != 0 ? randomOffset : "0"}px`, 
-                  }}  
-                />
-              )
+              if( j <= 5 ){
+                const randomRotate = (Math.random() * 16) - 5
+                const randomOffset = (Math.random() * 11) - 5
+                return(
+                  <img 
+                    className={`project-image ${j === 0 ? "front" : "back"}-image`} 
+                    src={image.imageSrc} 
+                    key={j}
+                    style={{
+                      transform: `rotate(${j != 0 ? randomRotate : "0"}deg)`, 
+                      top: `${j != 0 ? randomOffset : "0"}px`, 
+                    }}  
+                  />
+                )
+              }
             })}
           </div>
           <h3 className="uppercase font-bold text-electric-purple">{project.name}</h3>
           <p>{project.description}</p>
-        </div>
+        </Link>
       )
     })}
   </div>
