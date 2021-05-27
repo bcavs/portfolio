@@ -11,8 +11,8 @@ const EmployerPage = ({pageContext}) => {
   console.log("pageContext: ", pageContext)
   const { openContactForm } = useContext(ContactFormContext)
   return (
-    <Layout title={pageContext.title} noContainer={true} styles={{overflow: 'hidden'}}>
-      <HeadSection className="employer-page container py-8 flex flex-col">
+    <Layout title={pageContext.title} noContainer={false} styles={{overflow: 'hidden'}}>
+      <HeadSection className="employer-page container py-8 px-4 flex flex-col">
         <span className="flex items-end">
           <h1 className="text-3xl uppercase font-extrabold leading-none">{pageContext.title}</h1>
           <p className="mx-5">{`${pageContext.date}`}</p>
