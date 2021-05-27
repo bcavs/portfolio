@@ -12,13 +12,13 @@ const EmployerPage = ({pageContext}) => {
   const { openContactForm } = useContext(ContactFormContext)
   return (
     <Layout title={pageContext.title} noContainer={true} styles={{overflow: 'hidden'}}>
-      <div className="employer-page container py-8 flex flex-col">
+      <HeadSection className="employer-page container py-8 flex flex-col">
         <span className="flex items-end">
           <h1 className="text-3xl uppercase font-extrabold leading-none">{pageContext.title}</h1>
           <p className="mx-5">{`${pageContext.date}`}</p>
         </span>
         <p className="my-4">{pageContext.jobDescription}</p>
-      </div>
+      </HeadSection>
         {/* //Add image grid here */}
        <SiteCardContainer>
         <HorizontalScroll reverseScroll>
@@ -37,6 +37,11 @@ const EmployerPage = ({pageContext}) => {
 }
 
 export default EmployerPage
+const HeadSection = styled.div`
+  display:flex;
+  flex-flow: column;
+  margin: 0 auto;
+`
 
 const SiteCardContainer = styled.div`
   height: 200px;
@@ -47,6 +52,16 @@ const SiteCardContainer = styled.div`
 const SiteCard = styled.div`
   width: 350px;
   border-radius: 6px;
-  height:100%;
+  /* height:100%; */
   margin: 15px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);
+  box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);
+  img{
+    border-radius: 5px;
+  }
+  &:hover{
+    cursor: pointer;
+  }
 `
