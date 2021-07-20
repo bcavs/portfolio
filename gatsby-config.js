@@ -3,6 +3,7 @@ module.exports = {
     title: `Ben Cavenagh's Portfolio`,
     description: `Hi! I'm a web guy.`,
     author: `@bcavs`,
+    image: `src/images/BCLogo-White-Shadowed.png`, 
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -28,13 +29,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Ben Cavenagh &emdash; Web Guy`,
+        short_name: `Ben Cavenagh`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/BCLogo-White-Shadowed.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-gatsby-cloud`,
