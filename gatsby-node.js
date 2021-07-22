@@ -14,7 +14,7 @@ data = [
         path: "/grubhub",
         title: "Grubhub",
         date: "September 2019 \u2014 Present",
-        jobDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum risus lorem, non cursus tellus consequat ut. Donec id egestas risus. Nullam ultrices justo neque, ac fermentum mauris tempor placerat. Vestibulum ut tellus sollicitudin, faucibus neque quis, suscipit lacus. Mauris dignissim felis magna, vitae tempor elit vestibulum nec. Quisque mattis blandit tellus sit amet consequat. Suspendisse libero tortor, pretium vitae cursus ut, venenatis eu neque. Nam condimentum tempor rhoncus. Nam nec fermentum nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce id libero ac orci malesuada consectetur nec quis enim.",
+        jobDescription: "Currently employed at Grubhub, I work on a small team responsible for maintaining and creating the websites and web apps for the marketing team. Below are some of the main websites and apps I work with on a daily basis. My team is in charge of handling everything from small updates and bug fixes to full site redesigns and redevelopments for all of these domains. Our current largest project is a complete redevelopment of the Grubhub Corporate website, modernizing the site from an outdated Wordpress setup to a lean and fast Gatsby website. In addition to these websites, the team is responsible for creating landing pages for marketing campaigns, developing custom marketing emails, as well as any other web related tasks the marketing team finds a need for. We've developed in-house apps for email development and deeplink generation and set up microsites for campaigns with longer lifespans. We're a one-stop shop for all web development related topics for the marketing team and beyond.",
         sites: [
             { 
                 url: "blog.grubhub.com",
@@ -28,17 +28,17 @@ data = [
                 summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum risus lorem, non cursus tellus consequat ut. Donec id egestas risus. Nullam ultrices justo neque, ac fermentum mauris tempor placerat. Vestibulum ut tellus sollicitudin, faucibus neque quis, suscipit lacus. Mauris dignissim felis magna, vitae tempor elit vestibulum nec. Quisque mattis blandit tellus sit amet consequat. Suspendisse libero tortor, pretium vitae cursus ut, venenatis eu neque. Nam condimentum tempor rhoncus. Nam nec fermentum nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce id libero ac orci malesuada consectetur nec quis enim."
             },{ 
                 url: "corporate.grubhub.com",
-                                link: "https://corporate.grubhub.com/",
+                link: "https://corporate.grubhub.com/",
                 imageSrc: "https://res.cloudinary.com/da9lbyiyl/image/upload/v1622008221/Work%20Site%20Screenshots/Corporate_hs1h44.png",
                 summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum risus lorem, non cursus tellus consequat ut. Donec id egestas risus. Nullam ultrices justo neque, ac fermentum mauris tempor placerat. Vestibulum ut tellus sollicitudin, faucibus neque quis, suscipit lacus. Mauris dignissim felis magna, vitae tempor elit vestibulum nec. Quisque mattis blandit tellus sit amet consequat. Suspendisse libero tortor, pretium vitae cursus ut, venenatis eu neque. Nam condimentum tempor rhoncus. Nam nec fermentum nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce id libero ac orci malesuada consectetur nec quis enim."
             },{ 
                 url: "restauranther.com",
-                                link: "https://restauranther.com/",
+                link: "https://restauranther.com/",
                 imageSrc: "https://res.cloudinary.com/da9lbyiyl/image/upload/v1622008211/Work%20Site%20Screenshots/RestaurantHER_uqmkl9.png",
                 summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum risus lorem, non cursus tellus consequat ut. Donec id egestas risus. Nullam ultrices justo neque, ac fermentum mauris tempor placerat. Vestibulum ut tellus sollicitudin, faucibus neque quis, suscipit lacus. Mauris dignissim felis magna, vitae tempor elit vestibulum nec. Quisque mattis blandit tellus sit amet consequat. Suspendisse libero tortor, pretium vitae cursus ut, venenatis eu neque. Nam condimentum tempor rhoncus. Nam nec fermentum nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce id libero ac orci malesuada consectetur nec quis enim."
             },{ 
                 url: "get.grubhub.com",
-                                link: "https://get.grubhub.com/",
+                link: "https://get.grubhub.com/",
                 imageSrc: "https://res.cloudinary.com/da9lbyiyl/image/upload/v1622008209/Work%20Site%20Screenshots/Get_bkxs1i.png",
                 summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum risus lorem, non cursus tellus consequat ut. Donec id egestas risus. Nullam ultrices justo neque, ac fermentum mauris tempor placerat. Vestibulum ut tellus sollicitudin, faucibus neque quis, suscipit lacus. Mauris dignissim felis magna, vitae tempor elit vestibulum nec. Quisque mattis blandit tellus sit amet consequat. Suspendisse libero tortor, pretium vitae cursus ut, venenatis eu neque. Nam condimentum tempor rhoncus. Nam nec fermentum nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce id libero ac orci malesuada consectetur nec quis enim."
             },{
@@ -55,7 +55,8 @@ data = [
         jobDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum risus lorem, non cursus tellus consequat ut. Donec id egestas risus. Nullam ultrices justo neque, ac fermentum mauris tempor placerat. Vestibulum ut tellus sollicitudin, faucibus neque quis, suscipit lacus. Mauris dignissim felis magna, vitae tempor elit vestibulum nec. Quisque mattis blandit tellus sit amet consequat. Suspendisse libero tortor, pretium vitae cursus ut, venenatis eu neque. Nam condimentum tempor rhoncus. Nam nec fermentum nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce id libero ac orci malesuada consectetur nec quis enim.",
         sites: [
             { 
-                url: "javahouse.com \n javahouse.eu",
+                url: "javahouse.com",
+                link: "https://javahouse.com/",
                 imageSrc: "https://res.cloudinary.com/da9lbyiyl/image/upload/v1622008218/Work%20Site%20Screenshots/Javahouse_bw1tfc.png",
                 summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum risus lorem, non cursus tellus consequat ut. Donec id egestas risus. Nullam ultrices justo neque, ac fermentum mauris tempor placerat. Vestibulum ut tellus sollicitudin, faucibus neque quis, suscipit lacus. Mauris dignissim felis magna, vitae tempor elit vestibulum nec. Quisque mattis blandit tellus sit amet consequat. Suspendisse libero tortor, pretium vitae cursus ut, venenatis eu neque. Nam condimentum tempor rhoncus. Nam nec fermentum nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce id libero ac orci malesuada consectetur nec quis enim."
             },{

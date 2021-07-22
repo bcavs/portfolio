@@ -7,6 +7,8 @@ import HorizontalScroll from 'react-scroll-horizontal'
 
 import { ContactFormContext } from "../context"
 
+import SiteCard from "../components/SiteCard"
+
 const EmployerPage = ({pageContext}) => {
   console.log("pageContext: ", pageContext)
   const { openContactForm } = useContext(ContactFormContext)
@@ -20,19 +22,14 @@ const EmployerPage = ({pageContext}) => {
         </span>
         <p className="my-4">{pageContext.jobDescription}</p>
       </HeadSection>
-        {/* //Add image grid here */}
        <SiteCardContainer>
-        {/* <HorizontalScroll reverseScroll> */}
-            <InnerCardContainer id="card-container" >
-              {pageContext.sites.map((site, i) => {
-                return(
-                  <SiteCard key={i}>
-                    <img src={site.imageSrc} />
-                  </SiteCard>
-                )
-              })}
-            </InnerCardContainer>
-        {/* </HorizontalScroll> */}
+          <InnerCardContainer id="card-container" >
+            {pageContext.sites.map((site, i) => {
+              return(
+                <SiteCard key={i} src={site.imageSrc} link={site.link} url={site.url}/>
+              )
+            })}
+          </InnerCardContainer>
        </SiteCardContainer>
 
     </Layout>
@@ -48,7 +45,7 @@ const HeadSection = styled.div`
 
 const SiteCardContainer = styled.div`
   position: relative;
-  overflow-x: scroll;
+  overflow-x: auto;
   height: 250px;
   ::-webkit-scrollbar{
     height:7px;
@@ -64,32 +61,16 @@ const SiteCardContainer = styled.div`
     background: #888; 
     border-radius: 50px;
   }
-
+  
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #555; 
   }
-`;
+  `;
 
 const InnerCardContainer = styled.div`
   display: flex;
   height: 210px;
   position: absolute;
-`
+  `
 
-const SiteCard = styled.div`
-  border-radius: 6px;
-  margin: 15px;
-  border-radius: 5px;
-  -webkit-box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);
-  -moz-box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);
-  box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.25);
-  img{
-    border-radius: 5px;
-    max-width:350px;
-    height:100%;
-  }
-  &:hover{
-    cursor: pointer;
-  }
-`
