@@ -43,7 +43,7 @@ const ContactModal = (props) => {
             fetch("/", {
               method: "POST",
               headers: { "Content-Type": "application/x-www-form-urlencoded" },
-              body: encode({ "form-name": "contact-demo", ...values })
+              body: encode({ "form-name": "contact-form", ...values })
             })
             .then(() => {
               alert('Success');
@@ -61,7 +61,7 @@ const ContactModal = (props) => {
             touched,
             handleChange,
           }) => (
-            <StyledForm>
+            <StyledForm data-netlify="true" name="contact-form"> 
               <InputContainer>
                 <StyledTextField 
                   error={touched.name && errors.name}
