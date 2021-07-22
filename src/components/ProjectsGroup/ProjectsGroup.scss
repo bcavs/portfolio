@@ -6,6 +6,10 @@
     .project{
         display:flex;
         flex-flow: column;
+        @media screen and (max-width: 992px) {
+            max-width: 90%;
+            margin: 20px auto;
+        }
         .project-image-container{
             position:relative;
             min-height:100px;
@@ -20,7 +24,7 @@
                             top: 0 !important;
                         }
                     }
-
+                    
                 }
             }
             .project-image{
@@ -36,6 +40,15 @@
                     &:nth-child(#{$i}){
                         z-index: (#{10 - $i});
                     }
+                }
+                @media screen and (max-width: 992px) {
+                    transform: rotate(0deg) scale(1) !important;
+                    @for $i from 1 through 10{
+                        &:nth-child(#{$i}){
+                            margin-top: ( -(#{($i * 10px) - 10px}));
+                            top: 0 !important;
+                        }
+                    }   
                 }
             }
             .front-image{

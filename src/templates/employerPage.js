@@ -16,9 +16,9 @@ const EmployerPage = ({pageContext}) => {
   return (
     <Layout title={pageContext.title} noContainer={false} styles={{overflow: 'hidden'}}>
       <HeadSection className="employer-page container py-8 px-4 flex flex-col">
-        <span className="flex items-end">
+        <span className="flex items-start md:items-end flex-col md:flex-row">
           <h1 className="text-3xl uppercase font-extrabold leading-none">{pageContext.title}</h1>
-          <p className="mx-5">{`${pageContext.date}`}</p>
+          <p className="md:mx-5">{`${pageContext.date}`}</p>
         </span>
         <p className="my-4">{pageContext.jobDescription}</p>
       </HeadSection>

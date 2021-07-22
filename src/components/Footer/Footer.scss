@@ -5,6 +5,10 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    @media screen and (max-width: 992px) {
+        display: flex;
+        flex-flow: column-reverse;
+    }
     .social-container{
 
     }
