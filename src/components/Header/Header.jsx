@@ -1,23 +1,17 @@
-import React, { useContext } from "react"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import "./Header.scss"
 
+import GatsbyLogo from '../../images/svg/Gatsby.svg';
+import { HiMail } from "react-icons/hi";
+import { Link } from "gatsby"
 import Logo from '../../images/svg/BCLogo.svg';
+import PropTypes from "prop-types"
+import React from "react"
 import ReactLogo from '../../images/svg/ReactLogo.svg';
 import SassLogo from '../../images/svg/Sass.svg';
-import GatsbyLogo from '../../images/svg/Gatsby.svg';
-
-import { HiMail } from "react-icons/hi";
-
-import "./Header.scss"
 import SocialButtons from "../SocialButtons";
-
-import { ContactFormContext } from "../../context"
+import { StaticImage } from "gatsby-plugin-image"
 
 const Header = ({ siteTitle }) => {
-  const { openContactForm } = useContext(ContactFormContext)
-  
   return(
   <header className="bg-dark-blue py-12 px-3 flex justify-center">
     <div className="header-content-container || container items-center md:items-start justify-items-center">
@@ -51,8 +45,8 @@ const Header = ({ siteTitle }) => {
         </Link>
       </div>
       <div id="nav-links" className="md:justify-self-end">
-        <button onClick={() => openContactForm()} className="bg-sky-blue text-dark-blue px-2 py-1 rounded font-bold">Contact me <HiMail className="mail-icon"/></button>
-        <SocialButtons />
+        {/* <button onClick={() => openContactForm()} className="bg-sky-blue text-dark-blue px-2 py-1 rounded font-bold">Contact me <HiMail className="mail-icon"/></button> */}
+        <SocialButtons type="footer"/>
       </div>
     </div>
   </header>

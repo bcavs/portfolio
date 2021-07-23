@@ -1,17 +1,13 @@
-import React, { useState, useContext } from "react"
+import { HiMail } from "react-icons/hi";
+import HorizontalScroll from 'react-scroll-horizontal'
+import Layout from "../components/layout"
+import React from "react"
+import SiteCard from "../components/SiteCard"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-import { HiMail } from "react-icons/hi";
-import Layout from "../components/layout"
-import HorizontalScroll from 'react-scroll-horizontal'
-
-import { ContactFormContext } from "../context"
-
-import SiteCard from "../components/SiteCard"
 
 const EmployerPage = ({pageContext}) => {
   console.log("pageContext: ", pageContext)
-  const { openContactForm } = useContext(ContactFormContext)
 
   return (
     <Layout title={pageContext.title} noContainer={false} styles={{overflow: 'hidden'}}>

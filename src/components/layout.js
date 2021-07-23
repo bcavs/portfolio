@@ -5,24 +5,16 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React, { useState, useContext } from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./Header"
 import Footer from "./Footer"
-import SocialButtons from "./SocialButtons"
-
+import Header from "./Header"
+import PropTypes from "prop-types"
+import React from "react"
 import SEO from "./seo"
-import ContactModal from "./ContactModal/ContactModal"
-import { ContactFormContextProvider } from "../context"
 
 const Layout = ({ title, children, noContainer, styles }) => {
   return (
     <>
-      <ContactFormContextProvider>
         <SEO title={title} />
-        <ContactModal />
         <div style={{
           display: "flex",
           flexFlow: "column",
@@ -43,7 +35,6 @@ const Layout = ({ title, children, noContainer, styles }) => {
           </div>
           <Footer />
         </div>
-      </ContactFormContextProvider>
     </>
   )
 }

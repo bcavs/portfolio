@@ -1,13 +1,13 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 
+import ContactForm from "../components/ContactForm/ContactForm"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
-
+import { Link } from "gatsby"
 import PreviousEmployers from "../components/PreviousEmployers"
 import ProjectsGroup from '../components/ProjectsGroup'
-
+import SEO from "../components/seo"
+import { StaticImage } from "gatsby-plugin-image"
+import styled from 'styled-components';
 
 const IndexPage = () => (
   <Layout title="Home">
@@ -18,10 +18,18 @@ const IndexPage = () => (
     </section>
     <PreviousEmployers/>
     <hr className="my-6" style={{ maxWidth:"500px", padding:"0 30px", borderTopWidth: '2px', margin:"50px auto" }}/>
-    <div id="projects-section">
+    <section id="projects-section">
       <ProjectsGroup/>
-    </div>
+    </section>
+    <PageSection >
+      <ContactForm/>
+    </PageSection>
   </Layout>
 )
 
 export default IndexPage
+
+
+const PageSection = styled.section`
+  margin-top: 75px;
+`;
