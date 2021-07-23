@@ -46,7 +46,7 @@ const ContactModal = (props) => {
               body: encode({ "form-name": "contact-form", ...values })
             })
             .then(() => {
-              alert('Success');
+              console.log('Success: ', values);
               actions.resetForm()
             })
             .catch(() => {
@@ -66,6 +66,8 @@ const ContactModal = (props) => {
               data-netlify="true"
               data-netlify-honeypot="bot-field"
             > 
+              {/* Hidden field needed for Netlify to recognize the form */}
+              <input type="hidden" name="form-name" value="contact" />
               <InputContainer>
                 <StyledTextField 
                   error={touched.name && errors.name}
