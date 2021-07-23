@@ -67,7 +67,7 @@ const ContactModal = (props) => {
               data-netlify-honeypot="bot-field"
             > 
               {/* Hidden field needed for Netlify to recognize the form */}
-              <input type="hidden" name="contact-form" value="contact" />
+              <input type="hidden" name="form-name" value="contact-form" />
               <InputContainer>
                 <StyledTextField 
                   error={touched.name && errors.name}
