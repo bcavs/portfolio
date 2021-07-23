@@ -38,7 +38,7 @@ const ContactForm = (props) => {
         fetch("/", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: encode({ "form-name": "contact-form", ...values })
+          body: encode({ "form-name": "Contact Form", ...values })
         })
         .then(() => {
           console.log('Success: ', values);
@@ -57,12 +57,12 @@ const ContactForm = (props) => {
         handleChange,
       }) => (
         <StyledForm 
-          name="contact-form"
+          name="Contact Form"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
         > 
           {/* Hidden field needed for Netlify to recognize the form */}
-          <input type="hidden" name="form-name" value="contact-form" />
+          <input type="hidden" name="form-name" value="Contact Form" />
           <InputContainer>
             <StyledTextField 
               error={touched.name && errors.name}
