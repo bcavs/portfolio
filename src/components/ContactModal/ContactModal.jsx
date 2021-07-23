@@ -61,7 +61,11 @@ const ContactModal = (props) => {
             touched,
             handleChange,
           }) => (
-            <StyledForm data-netlify="true" name="contact-form"> 
+            <StyledForm 
+              name="contact-form"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+            > 
               <InputContainer>
                 <StyledTextField 
                   error={touched.name && errors.name}
