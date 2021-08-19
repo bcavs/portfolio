@@ -1,14 +1,18 @@
-import React from 'react';
-import styled from "styled-components"
+import styled, { css } from "styled-components"
+
 import PropTypes from 'prop-types';
+import React from 'react';
+
 //import { Test } from './SiteCard.styles';
 
-const SiteCard = (props) => (
-  <StyledSiteCard href={props.link}>
-    <img src={props.src} />
-    <p>{props.url}</p>
-  </StyledSiteCard>
-);
+const SiteCard = (props) => { 
+  return(
+    <StyledSiteCard href={props.link} isLinked={false}>
+      <img src={props.src} />
+      <p>{props.url}</p>
+    </StyledSiteCard>
+  )
+};
 
 SiteCard.propTypes = {
   // bla: PropTypes.string,
@@ -41,5 +45,18 @@ const StyledSiteCard = styled.a`
     text-align: center;
     margin-top: 10px;
   }
-
+  // If the component doesn't have a link attached to it
+  ${props => props.href ? 
+    (css`
+      :hover{
+        transform: scale(1.04)
+      }
+    `)
+  :
+    (css`
+      :hover{
+        cursor: not-allowed;
+      }
+    `)
+  }
 `

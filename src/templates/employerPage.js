@@ -62,7 +62,7 @@ const SiteCardContainer = styled.div`
   ::-webkit-scrollbar-thumb:hover {
     background: #555; 
   }
-  `;
+`;
 
 const InnerCardContainer = styled.div`
   display: flex;

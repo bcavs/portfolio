@@ -1,10 +1,19 @@
 import { Button, Modal, TextField } from '@material-ui/core';
 import { Form, Formik } from 'formik';
+import { ThemeProvider, createTheme } from '@material-ui/core/styles';
 
 import React from 'react';
 import SendIcon from '@material-ui/icons/Send';
 // import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#635BFF',
+    },
+  },
+});
 
 const ContactForm = (props) => {
 
@@ -14,6 +23,7 @@ const ContactForm = (props) => {
       .join("&");
   }
   return(
+    <ThemeProvider theme={theme}>
   <FormContainer>
     <FormTop>
       <FormHeadline>Get in touch</FormHeadline>
@@ -98,11 +108,12 @@ const ContactForm = (props) => {
               multiline
             />
           </InputContainer>  
-          <StyledButton color="primary" variant="contained" endIcon={<SendIcon/>} type="submit">Send</StyledButton>
+          <StyledButton color="primary" variant="contained" className="" endIcon={<SendIcon/>} type="submit">Send</StyledButton>
         </StyledForm>
       )}
     </Formik>
   </FormContainer>
+  </ThemeProvider>
   )
 };
 

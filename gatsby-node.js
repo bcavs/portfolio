@@ -52,7 +52,7 @@ data = [
         path: "/hfpg",
         title: "Heartland FPG",
         date: "May 2018 \u2014 June 2019",
-        jobDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum risus lorem, non cursus tellus consequat ut. Donec id egestas risus. Nullam ultrices justo neque, ac fermentum mauris tempor placerat. Vestibulum ut tellus sollicitudin, faucibus neque quis, suscipit lacus. Mauris dignissim felis magna, vitae tempor elit vestibulum nec. Quisque mattis blandit tellus sit amet consequat. Suspendisse libero tortor, pretium vitae cursus ut, venenatis eu neque. Nam condimentum tempor rhoncus. Nam nec fermentum nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce id libero ac orci malesuada consectetur nec quis enim.",
+        jobDescription: "At Heartland I was a solo web developer handling the websites listed below as well as custom developing all of the marketing emails for the various brands. The websites were primarily Wordpress based websites and the email development was originally just plain HTML/CSS however I intitiated the transition to using Foundation by Zurb to improve the email development experience and drastically speed up development time from about 1 week per email to about 1 day depending on complexity.",
         sites: [
             { 
                 url: "javahouse.com",
@@ -76,7 +76,7 @@ data = [
         path: "/other",
         title: "Personal, Freelance, and Other Projects",
         date: "2016 \u2014 Present",
-        jobDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum risus lorem, non cursus tellus consequat ut. Donec id egestas risus. Nullam ultrices justo neque, ac fermentum mauris tempor placerat. Vestibulum ut tellus sollicitudin, faucibus neque quis, suscipit lacus. Mauris dignissim felis magna, vitae tempor elit vestibulum nec. Quisque mattis blandit tellus sit amet consequat. Suspendisse libero tortor, pretium vitae cursus ut, venenatis eu neque. Nam condimentum tempor rhoncus. Nam nec fermentum nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce id libero ac orci malesuada consectetur nec quis enim.",
+        jobDescription: "As a primarily self-taught developer, personal and freelance projects allow me to further my skills and explore new areas of web development that may not be as relevant or applicable to what I do in my current job. Below are some of the projects I've worked on either personally or for clients/partners.",
         sites: [
             { 
                 url: "thevaultrox.com",
