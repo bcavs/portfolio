@@ -1,0 +1,16 @@
+:root{
+    --fontSize-legal: 0.625rem;
+    --fontSize-0: 0.833rem;
+    --fontSize-1: 1rem;
+    --fontSize-2: 1.2rem;
+    --fontSize-3: 1.44rem;
+    --fontSize-4: 1.728rem;
+    --fontSize-5: 2.074rem;
+    --fontSize-6: 2.488rem;
+    --fontSize-7: 2.986rem;
+    --fontSize-8: 3.583rem;
+    
+    --color-dark-blue: #0A2540;
+    --color-sky-blue: #00D4FF;
+    --color-purple: #635BFF;
+}

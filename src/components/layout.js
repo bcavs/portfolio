@@ -11,7 +11,8 @@ import PropTypes from "prop-types"
 import React from "react"
 import SEO from "./seo"
 
-const Layout = ({ title, children, noContainer, styles }) => {
+const Layout = ({ title, children, noContainer, styles, minimalHeader }) => {
+  console.log("Min: ", minimalHeader)
   return (
     <>
         <SEO title={title} />
@@ -20,7 +21,7 @@ const Layout = ({ title, children, noContainer, styles }) => {
           flexFlow: "column",
           minHeight : "100vh"
         }}>
-          <Header siteTitle={title || `Hello`} />
+          <Header siteTitle={title || `Hello`} minimalHeader />
           <div
             style={{
               margin: `0 ${noContainer ? "0" : "auto"}`,
