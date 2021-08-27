@@ -21,7 +21,7 @@ const Layout = ({ title, children, noContainer, styles, minimalHeader }) => {
           flexFlow: "column",
           minHeight : "100vh"
         }}>
-          <Header siteTitle={title || `Hello`} minimalHeader />
+          <Header siteTitle={title || `Hello`} minimalHeader={minimalHeader} />
           <div
             style={{
               margin: `0 ${noContainer ? "0" : "auto"}`,
