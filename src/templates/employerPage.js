@@ -1,9 +1,6 @@
-import { HiMail } from "react-icons/hi";
-import HorizontalScroll from 'react-scroll-horizontal'
 import Layout from "../components/layout"
 import React from "react"
 import SiteCard from "../components/SiteCard"
-import { graphql } from "gatsby"
 import styled from "styled-components"
 
 const EmployerPage = ({pageContext}) => {

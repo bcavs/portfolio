@@ -1,18 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import './PreviousEmployers.scss';
 
-import Grubhub from '../../images/svg/Logo-Grubhub.svg';
 import AubryLane from '../../images/svg/Logo-AubryLane.svg';
-import HFPG from '../../images/svg/Logo-HFPG.svg';
+import Grubhub from '../../images/svg/Logo-Grubhub.svg';
+import Hfpg from '../../images/svg/Logo-HFPG.svg';
 import Javahouse from '../../images/svg/Logo-Javahouse.svg';
+import Logo2Row from '../../images/svg/Logos-2-Row.svg'
+import LogoRow from '../../images/svg/Logos-Row.svg'
 import RadioFlyer from '../../images/svg/Logo-RadioFlyer.svg';
+import React from 'react';
 import Splenda from '../../images/svg/Logo-Splenda.svg';
 
-import LogoRow from '../../images/svg/Logos-Row.svg'
-import Logo2Row from '../../images/svg/Logos-2-Row.svg'
+// import PropTypes from 'prop-types';
 
 
-import './PreviousEmployers.scss';
+
+
 
 const PreviousEmployers = (props) => (
 
@@ -26,19 +28,19 @@ const PreviousEmployers = (props) => (
         <Grubhub/>
         <RadioFlyer/>
         <Splenda/>
-        <HFPG/>
+        <Hfpg/>
         <Javahouse/>
         <AubryLane/>
     </div>
   </section>
 );
 
-PreviousEmployers.propTypes = {
-  // bla: PropTypes.string,
-};
+// PreviousEmployers.propTypes = {
+//   // bla: PropTypes.string,
+// };
 
-PreviousEmployers.defaultProps = {
-  // bla: 'test',
-};
+// PreviousEmployers.defaultProps = {
+//   // bla: 'test',
+// };
 
 export default PreviousEmployers;

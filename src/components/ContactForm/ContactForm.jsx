@@ -1,4 +1,4 @@
-import { Button, Modal, TextField } from '@material-ui/core';
+import { Button, TextField } from '@material-ui/core';
 import { Form, Formik } from 'formik';
 import { ThemeProvider, createTheme } from '@material-ui/core/styles';
 
@@ -117,28 +117,28 @@ const ContactForm = (props) => {
   )
 };
 
-ContactForm.propTypes = {
-  // bla: PropTypes.string,
-};
+// ContactForm.propTypes = {
+//   // bla: PropTypes.string,
+// };
 
-ContactForm.defaultProps = {
-  // bla: 'test',
-};
+// ContactForm.defaultProps = {
+//   // bla: 'test',
+// };
 
 export default ContactForm;
 
 
-const StyledModal = styled(Modal)`
-  position: fixed;
-  width: 100vw;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-`;
+// const StyledModal = styled(Modal)`
+//   position: fixed;
+//   width: 100vw;
+//   height: 100%;
+//   top: 0;
+//   left: 0;
+//   z-index: 999;
+//   display:flex;
+//   justify-content: center;
+//   align-items: center;
+// `;
 const FormContainer = styled.div`
   width: clamp(300px, 75%, 650px);
   padding: 20px;

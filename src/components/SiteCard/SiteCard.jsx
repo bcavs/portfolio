@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components"
 
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import React from 'react';
 
 //import { Test } from './SiteCard.styles';
@@ -8,19 +8,19 @@ import React from 'react';
 const SiteCard = (props) => { 
   return(
     <StyledSiteCard href={props.link} isLinked={false}>
-      <img src={props.src} />
+      <img src={props.src} alt={`${props.url}`}/>
       <p>{props.url}</p>
     </StyledSiteCard>
   )
 };
 
-SiteCard.propTypes = {
-  // bla: PropTypes.string,
-};
+// SiteCard.propTypes = {
+//   // bla: PropTypes.string,
+// };
 
-SiteCard.defaultProps = {
-  // bla: 'test',
-};
+// SiteCard.defaultProps = {
+//   // bla: 'test',
+// };
 
 export default SiteCard;
 

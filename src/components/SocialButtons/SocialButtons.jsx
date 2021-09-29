@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import { FaLinkedin, FaFacebook, FaGithub } from "react-icons/fa";
-
 import './SocialButtons.scss';
+
+import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
+
+import React from 'react';
 
 const SocialButtons = (props) => (
   <div className={`floating-social-container social-buttons-${props.type}`}>
@@ -23,13 +23,5 @@ const SocialButtons = (props) => (
     </a>
   </div>
 );
-
-SocialButtons.propTypes = {
-  // bla: PropTypes.string,
-};
-
-SocialButtons.defaultProps = {
-  // bla: 'test',
-};
 
 export default SocialButtons;

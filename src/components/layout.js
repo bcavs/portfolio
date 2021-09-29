@@ -9,13 +9,12 @@ import Footer from "./Footer"
 import Header from "./Header"
 import PropTypes from "prop-types"
 import React from "react"
-import SEO from "./seo"
+import Seo from "./seo"
 
 const Layout = ({ title, children, noContainer, styles, minimalHeader }) => {
-  console.log("Min: ", minimalHeader)
   return (
     <>
-        <SEO title={title} />
+        <Seo title={title} />
         <div style={{
           display: "flex",
           flexFlow: "column",

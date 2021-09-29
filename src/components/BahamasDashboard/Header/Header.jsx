@@ -1,7 +1,9 @@
 import { Date, Headline, Overlay, Wrapper } from './Header.styled';
 
-import PropTypes from 'prop-types';
 import React from 'react';
+
+// import PropTypes from 'prop-types';
+
 
 const Header = (props) => (
   <Wrapper>
@@ -13,12 +15,12 @@ const Header = (props) => (
   </Wrapper>
 );
 
-Header.propTypes = {
-  // bla: PropTypes.string,
-};
+// Header.propTypes = {
+//   // bla: PropTypes.string,
+// };
 
-Header.defaultProps = {
-  // bla: 'test',
-};
+// Header.defaultProps = {
+//   // bla: 'test',
+// };
 
 export default Header;

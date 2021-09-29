@@ -1,8 +1,11 @@
 import { HotelContent, HotelImages, HotelInformation, Image } from "./AccomodationWidget.styled"
 
-import PropTypes from 'prop-types';
 import React from 'react';
 import { WidgetHeader } from "../WidgetBase.styled"
+
+// import PropTypes from 'prop-types';
+
+
 
 const AccomodationWidget = (props) => (
   <div>
@@ -23,12 +26,12 @@ const AccomodationWidget = (props) => (
   </div>
 );
 
-AccomodationWidget.propTypes = {
-  // bla: PropTypes.string,
-};
+// AccomodationWidget.propTypes = {
+//   // bla: PropTypes.string,
+// };
 
-AccomodationWidget.defaultProps = {
-  // bla: 'test',
-};
+// AccomodationWidget.defaultProps = {
+//   // bla: 'test',
+// };
 
 export default AccomodationWidget;

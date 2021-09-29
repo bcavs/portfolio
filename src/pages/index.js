@@ -2,11 +2,8 @@ import * as React from "react"
 
 import ContactForm from "../components/ContactForm/ContactForm"
 import Layout from "../components/layout"
-import { Link } from "gatsby"
 import PreviousEmployers from "../components/PreviousEmployers"
 import ProjectsGroup from '../components/ProjectsGroup'
-import SEO from "../components/seo"
-import { StaticImage } from "gatsby-plugin-image"
 import styled from 'styled-components';
 
 const IndexPage = () => (

@@ -3,7 +3,6 @@ import "./Header.scss"
 import { LogoContainer, MinimalHeader } from "./Header.styled";
 
 import GatsbyLogo from '../../images/svg/Gatsby.svg';
-import { HiMail } from "react-icons/hi";
 import { Link } from "gatsby"
 import Logo from '../../images/svg/BCLogo.svg';
 import PropTypes from "prop-types"
@@ -11,7 +10,6 @@ import React from "react"
 import ReactLogo from '../../images/svg/ReactLogo.svg';
 import SassLogo from '../../images/svg/Sass.svg';
 import SocialButtons from "../SocialButtons";
-import { StaticImage } from "gatsby-plugin-image"
 
 const getHeader = (minimal) => {
   if(minimal){

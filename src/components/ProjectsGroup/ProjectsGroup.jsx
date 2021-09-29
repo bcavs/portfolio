@@ -1,26 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import './ProjectsGroup.scss';
 
-// Grubhub Images
-import Corporate from "../../images/project-screenshots/Grubhub/Corporate.png"
-import Driver from "../../images/project-screenshots/Grubhub/Driver.png"
-import Get from "../../images/project-screenshots/Grubhub/Get.png"
-import LinkingPark from "../../images/project-screenshots/Grubhub/Linking-Park.png"
-import RestaurantHER from "../../images/project-screenshots/Grubhub/RestaurantHER.png"
-import Blog from "../../images/project-screenshots/Grubhub/Blog.png"
-
-// HFPG Images
-import Javahouse from "../../images/project-screenshots/HFPG/Javahouse.png"
-import PromiseBev from "../../images/project-screenshots/HFPG/Promise.png"
-import Splenda from "../../images/project-screenshots/HFPG/Splenda.png"
-
-// Other Project Images
 import AubryLane from "../../images/project-screenshots/Other/Aubry-Lane.png"
+import Blog from "../../images/project-screenshots/Grubhub/Blog.png"
+import Corporate from "../../images/project-screenshots/Grubhub/Corporate.png"
 import DailyDigi from "../../images/project-screenshots/Other/Daily-Digi.png"
+import Driver from "../../images/project-screenshots/Grubhub/Driver.png"
 import Dunbar from "../../images/project-screenshots/Other/Dunbar.png"
-import Vault from "../../images/project-screenshots/Other/The-Vault.png"
+import Get from "../../images/project-screenshots/Grubhub/Get.png"
+import Javahouse from "../../images/project-screenshots/HFPG/Javahouse.png"
 import { Link } from 'gatsby';
+import LinkingPark from "../../images/project-screenshots/Grubhub/Linking-Park.png"
+import PromiseBev from "../../images/project-screenshots/HFPG/Promise.png"
+import React from 'react';
+import RestaurantHER from "../../images/project-screenshots/Grubhub/RestaurantHER.png"
+import Splenda from "../../images/project-screenshots/HFPG/Splenda.png"
+import Vault from "../../images/project-screenshots/Other/The-Vault.png"
+
+// import PropTypes from 'prop-types';
 
 const projects = [
   {
@@ -75,14 +71,16 @@ const ProjectsGroup = (props) => (
                   <img 
                     className={`project-image ${j === 0 ? "front" : "back"}-image`} 
                     src={image.imageSrc} 
+                    alt={`${project.name}`}
                     key={j}
                     style={{
-                      transform: `rotate(${j != 0 ? randomRotate : "0"}deg)`, 
-                      top: `${j != 0 ? randomOffset : "0"}px`, 
+                      transform: `rotate(${j !== 0 ? randomRotate : "0"}deg)`, 
+                      top: `${j !== 0 ? randomOffset : "0"}px`, 
                     }}  
                   />
                 )
               }
+              return null
             })}
           </div>
           <h3 className="uppercase font-bold text-electric-purple">{project.name}</h3>
@@ -93,12 +91,12 @@ const ProjectsGroup = (props) => (
   </div>
 );
 
-ProjectsGroup.propTypes = {
-  // bla: PropTypes.string,
-};
+// ProjectsGroup.propTypes = {
+//   // bla: PropTypes.string,
+// };
 
-ProjectsGroup.defaultProps = {
-  // bla: 'test',
-};
+// ProjectsGroup.defaultProps = {
+//   // bla: 'test',
+// };
 
 export default ProjectsGroup;

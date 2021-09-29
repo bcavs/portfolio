@@ -1,7 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import SocialButtons from "../SocialButtons";
 import './Footer.scss';
+
+import React from 'react';
+// import PropTypes from 'prop-types';
+import SocialButtons from "../SocialButtons";
 
 const Footer = (props) => (
   <div className=" bg-dark-blue text-white ">
@@ -14,12 +15,12 @@ const Footer = (props) => (
   </div>
 );
 
-Footer.propTypes = {
-  // bla: PropTypes.string,
-};
+// Footer.propTypes = {
+//   // bla: PropTypes.string,
+// };
 
-Footer.defaultProps = {
-  // bla: 'test',
-};
+// Footer.defaultProps = {
+//   // bla: 'test',
+// };
 
 export default Footer;
