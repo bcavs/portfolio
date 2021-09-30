@@ -5,3 +5,9 @@ export const WidgetHeader = styled.h3`
     font-size: var(--fontSize-3);
     text-transform: uppercase;
 `;
+
+export const Widget = styled.div`
+    flex:1;
+    display: flex;
+    flex-flow:column;
+`

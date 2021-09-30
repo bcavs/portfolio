@@ -24,96 +24,96 @@ const ContactForm = (props) => {
   }
   return(
     <ThemeProvider theme={theme}>
-  <FormContainer>
-    <FormTop>
-      <FormHeadline>Get in touch</FormHeadline>
-    </FormTop>
-    <Formik
-      initialValues={{ name: '', email: '', message: '' }}
-      validate={values => {
-        const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-        const errors = {};
-        if(!values.name) {
-          errors.name = "What's your name?"
-        }
-        if(!values.email || !emailRegex.test(values.email)) {
-          errors.email = 'Please enter a valid email'
-        }
-        if(!values.message) {
-          errors.message = "You're going to need to say something..."
-        }
-        return errors;
-      }}
-      onSubmit={(values, actions) => {
-        fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: encode({ "form-name": "Contact Form", ...values })
-        })
-        .then(() => {
-          console.log('Success: ', values);
-          actions.resetForm()
-        })
-        .catch(() => {
-          alert('Error');
-        })
-        .finally(() => actions.setSubmitting(false))
-      }}
-    >
-      {({
-        values,
-        errors,
-        touched,
-        handleChange,
-      }) => (
-        <StyledForm 
-          name="Contact Form"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-        > 
-          {/* Hidden field needed for Netlify to recognize the form */}
-          <input type="hidden" name="form-name" value="Contact Form" />
-          <InputContainer>
-            <StyledTextField 
-              error={touched.name && errors.name}
-              helperText={touched.name && errors.name && errors.name}
-              value={values.name} 
-              onChange={handleChange}
-              variant="outlined" 
-              name="name" 
-              label="Name" 
-              />
-          </InputContainer>  
-          <InputContainer>
-            <StyledTextField 
-              error={touched.email && errors.email}
-              helperText={touched.email && errors.email && errors.email}
-              value={values.email} 
-              onChange={handleChange}
-              variant="outlined" 
-              name="email" 
-              label="Email"
-              />
-          </InputContainer>  
-          <InputContainer>
-            <StyledTextField 
-              error={touched.message && errors.message}
-              helperText={touched.message && errors.message && errors.message}
-              value={values.message} 
-              onChange={handleChange}
-              variant="outlined" 
-              name="message" 
-              label="Message" 
-              minRows={4} 
-              multiline
-            />
-          </InputContainer>  
-          <StyledButton color="primary" variant="contained" className="" endIcon={<SendIcon/>} type="submit">Send</StyledButton>
-        </StyledForm>
-      )}
-    </Formik>
-  </FormContainer>
-  </ThemeProvider>
+      <FormContainer>
+        <FormTop>
+          <FormHeadline>Get in touch</FormHeadline>
+        </FormTop>
+        <Formik
+          initialValues={{ name: '', email: '', message: '' }}
+          validate={values => {
+            const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+            const errors = {};
+            if(!values.name) {
+              errors.name = "What's your name?"
+            }
+            if(!values.email || !emailRegex.test(values.email)) {
+              errors.email = 'Please enter a valid email'
+            }
+            if(!values.message) {
+              errors.message = "You're going to need to say something..."
+            }
+            return errors;
+          }}
+          onSubmit={(values, actions) => {
+            fetch("/", {
+              method: "POST",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: encode({ "form-name": "Contact Form", ...values })
+            })
+            .then(() => {
+              console.log('Success: ', values);
+              actions.resetForm()
+            })
+            .catch(() => {
+              alert('Error');
+            })
+            .finally(() => actions.setSubmitting(false))
+          }}
+        >
+          {({
+            values,
+            errors,
+            touched,
+            handleChange,
+          }) => (
+            <StyledForm 
+              name="Contact Form"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+            > 
+              {/* Hidden field needed for Netlify to recognize the form */}
+              <input type="hidden" name="form-name" value="Contact Form" />
+              <InputContainer>
+                <StyledTextField 
+                  error={touched.name && errors.name}
+                  helperText={touched.name && errors.name && errors.name}
+                  value={values.name} 
+                  onChange={handleChange}
+                  variant="outlined" 
+                  name="name" 
+                  label="Name" 
+                  />
+              </InputContainer>  
+              <InputContainer>
+                <StyledTextField 
+                  error={touched.email && errors.email}
+                  helperText={touched.email && errors.email && errors.email}
+                  value={values.email} 
+                  onChange={handleChange}
+                  variant="outlined" 
+                  name="email" 
+                  label="Email"
+                  />
+              </InputContainer>  
+              <InputContainer>
+                <StyledTextField 
+                  error={touched.message && errors.message}
+                  helperText={touched.message && errors.message && errors.message}
+                  value={values.message} 
+                  onChange={handleChange}
+                  variant="outlined" 
+                  name="message" 
+                  label="Message" 
+                  minRows={4} 
+                  multiline
+                />
+              </InputContainer>  
+              <StyledButton color="primary" variant="contained" className="" endIcon={<SendIcon/>} type="submit">Send</StyledButton>
+            </StyledForm>
+          )}
+        </Formik>
+      </FormContainer>
+    </ThemeProvider>
   )
 };
 

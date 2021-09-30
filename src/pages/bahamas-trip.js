@@ -31,7 +31,7 @@ export default BahamasDashboard
 
 const Grid = styled.div`
     width:100%;
-    height:100vh;
+    min-height:100vh;
     margin:0 auto;
     margin-top:4rem;
     display:grid;
@@ -48,6 +48,7 @@ const GridSection = styled.section`
     width:100%;
     height:100%;
     padding:1rem;
+    display:flex;
 `;
 
 const AccomodationSection = styled(GridSection)`
