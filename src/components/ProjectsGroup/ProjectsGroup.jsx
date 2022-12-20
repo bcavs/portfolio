@@ -24,6 +24,15 @@ import { Link } from 'gatsby';
 
 const projects = [
   {
+    name: "Foxtrot",
+    description:"Front-end Engineer",
+    images:[
+      { imageSrc: 'https://res.cloudinary.com/da9lbyiyl/image/upload/v1671559641/Work%20Site%20Screenshots/Screenshot_2022-12-20_at_12.06.21_PM_chjwtk.png' },
+      { imageSrc: 'https://res.cloudinary.com/da9lbyiyl/image/upload/v1671560268/Work%20Site%20Screenshots/Screenshot_2022-12-20_at_12.16.08_PM_htwezv.png' },
+    ],
+    link: "/foxtrot"
+  },
+  {
     name: "Grubhub",
     description:"Web Developer\u2014Marketing",
     images:[
@@ -50,6 +59,7 @@ const projects = [
     name: "Freelance/Personal",
     description:"Other projects I worked on for contracts or for fun",
     images:[
+      { imageSrc: "https://res.cloudinary.com/da9lbyiyl/image/upload/v1671560812/Work%20Site%20Screenshots/Screenshot_2022-12-20_at_12.26.45_PM_d4bk08.png" },
       { imageSrc: AubryLane },
       { imageSrc: Dunbar },
       { imageSrc: Vault },

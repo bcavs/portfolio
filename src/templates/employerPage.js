@@ -7,8 +7,6 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 
 const EmployerPage = ({pageContext}) => {
-  console.log("pageContext: ", pageContext)
-
   return (
     <Layout title={pageContext.title} noContainer={false} styles={{overflow: 'hidden'}}>
       <HeadSection className="employer-page container py-8 px-4 flex flex-col">

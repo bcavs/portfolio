@@ -11,10 +11,30 @@ const pageTemplate = path.resolve(`./src/templates/employerPage.js`)
 
 data = [
     {
+        path: "/foxtrot",
+        title: "Foxtrot",
+        date: "October 2021 \u2014 December 2022",
+        jobDescription: "As the leader of the merchandising and discovery engineering team at Foxtrot, I developed and implemented various features to improve customer discovery and purchasing experience on the website, such as enhanced product detail pages and improved search functionality. I also created an artistic brand landing page to tell the story of Foxtrot and developed internal tools to improve cross-team collaboration and reduce lost inventory. In addition to these responsibilities, I mentored and managed junior engineers and interns, helping them learn our codebase and build new features such as web cafe pickup and a map view for our stores. I also proposed, documented, and implemented new patterns and practices to increase developer efficiency and designed and prototyped engaging features for customers, such as hidden Easter eggs with promo codes and collectible account badges.",
+        sites: [
+            { 
+                url: "foxtrotco.com",
+                link: "https://foxtrotco.com/",
+                imageSrc: "https://res.cloudinary.com/da9lbyiyl/image/upload/v1671559641/Work%20Site%20Screenshots/Screenshot_2022-12-20_at_12.06.21_PM_chjwtk.png",
+                summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum risus lorem, non cursus tellus consequat ut. Donec id egestas risus. Nullam ultrices justo neque, ac fermentum mauris tempor placerat. Vestibulum ut tellus sollicitudin, faucibus neque quis, suscipit lacus. Mauris dignissim felis magna, vitae tempor elit vestibulum nec. Quisque mattis blandit tellus sit amet consequat. Suspendisse libero tortor, pretium vitae cursus ut, venenatis eu neque. Nam condimentum tempor rhoncus. Nam nec fermentum nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce id libero ac orci malesuada consectetur nec quis enim."
+            },
+            { 
+                url: "foxtrotco.com/our-story",
+                link: "https://foxtrotco.com/our-story",
+                imageSrc: "https://res.cloudinary.com/da9lbyiyl/image/upload/v1671560268/Work%20Site%20Screenshots/Screenshot_2022-12-20_at_12.16.08_PM_htwezv.png",
+                summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum risus lorem, non cursus tellus consequat ut. Donec id egestas risus. Nullam ultrices justo neque, ac fermentum mauris tempor placerat. Vestibulum ut tellus sollicitudin, faucibus neque quis, suscipit lacus. Mauris dignissim felis magna, vitae tempor elit vestibulum nec. Quisque mattis blandit tellus sit amet consequat. Suspendisse libero tortor, pretium vitae cursus ut, venenatis eu neque. Nam condimentum tempor rhoncus. Nam nec fermentum nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce id libero ac orci malesuada consectetur nec quis enim."
+            }
+        ]
+    },
+    {
         path: "/grubhub",
         title: "Grubhub",
-        date: "September 2019 \u2014 Present",
-        jobDescription: "Currently employed at Grubhub, I work on a small team responsible for maintaining and creating the websites and web apps for the marketing team. Below are some of the main websites and apps I work with on a daily basis. My team is in charge of handling everything from small updates and bug fixes to full site redesigns and redevelopments for all of these domains. Our current largest project is a complete redevelopment of the Grubhub Corporate website, modernizing the site from an outdated Wordpress setup to a lean and fast Gatsby website. In addition to these websites, the team is responsible for creating landing pages for marketing campaigns, developing custom marketing emails, as well as any other web related tasks the marketing team finds a need for. We've developed in-house apps for email development and deeplink generation and set up microsites for campaigns with longer lifespans. We're a one-stop shop for all web development related topics for the marketing team and beyond.",
+        date: "September 2019 \u2014 October 2021",
+        jobDescription: "As a member of the web development team at Grubhub, I was responsible for maintaining and creating websites and web apps for the various internal marketing teams. My primary responsibilities included implementing updates, fixing bugs, and redesigning and redeveloping websites. One of my team's notable projects was the complete redevelopment of the Grubhub Corporate website, which involved modernizing the site from a Wordpress platform to a more efficient Gatsby website. In addition to these tasks, my team also created landing pages for marketing campaigns, developed custom marketing emails, and provided web development support for the marketing team and beyond. We also developed in-house apps for email development and deeplink generation, and set up microsites for longer-term campaigns. Overall, our team served as a one-stop shop for all web development needs within the organization.",
         sites: [
             { 
                 url: "blog.grubhub.com",
@@ -79,13 +99,16 @@ data = [
         jobDescription: "As a primarily self-taught developer, personal and freelance projects allow me to further my skills and explore new areas of web development that may not be as relevant or applicable to what I do in my current job. Below are some of the projects I've worked on either personally or for clients/partners.",
         sites: [
             { 
+                url: "chefbrains.com",
+                link: "https://chefbrains.com/",
+                imageSrc: "https://res.cloudinary.com/da9lbyiyl/image/upload/v1671560812/Work%20Site%20Screenshots/Screenshot_2022-12-20_at_12.26.45_PM_d4bk08.png",
+                summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum risus lorem, non cursus tellus consequat ut. Donec id egestas risus. Nullam ultrices justo neque, ac fermentum mauris tempor placerat. Vestibulum ut tellus sollicitudin, faucibus neque quis, suscipit lacus. Mauris dignissim felis magna, vitae tempor elit vestibulum nec. Quisque mattis blandit tellus sit amet consequat. Suspendisse libero tortor, pretium vitae cursus ut, venenatis eu neque. Nam condimentum tempor rhoncus. Nam nec fermentum nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce id libero ac orci malesuada consectetur nec quis enim."
+            },{ 
                 url: "thevaultrox.com",
-                link: "https://thevaultrox.com/",
                 imageSrc: "https://res.cloudinary.com/da9lbyiyl/image/upload/v1622008223/Work%20Site%20Screenshots/The-Vault_btnjoo.png",
                 summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum risus lorem, non cursus tellus consequat ut. Donec id egestas risus. Nullam ultrices justo neque, ac fermentum mauris tempor placerat. Vestibulum ut tellus sollicitudin, faucibus neque quis, suscipit lacus. Mauris dignissim felis magna, vitae tempor elit vestibulum nec. Quisque mattis blandit tellus sit amet consequat. Suspendisse libero tortor, pretium vitae cursus ut, venenatis eu neque. Nam condimentum tempor rhoncus. Nam nec fermentum nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce id libero ac orci malesuada consectetur nec quis enim."
             },{
                 url: "dunbarsocial.com",
-                link: "https://dunbarsocial.com/",
                 imageSrc: "https://res.cloudinary.com/da9lbyiyl/image/upload/v1622008200/Work%20Site%20Screenshots/Dunbar_gkcnci.png",
                 summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum risus lorem, non cursus tellus consequat ut. Donec id egestas risus. Nullam ultrices justo neque, ac fermentum mauris tempor placerat. Vestibulum ut tellus sollicitudin, faucibus neque quis, suscipit lacus. Mauris dignissim felis magna, vitae tempor elit vestibulum nec. Quisque mattis blandit tellus sit amet consequat. Suspendisse libero tortor, pretium vitae cursus ut, venenatis eu neque. Nam condimentum tempor rhoncus. Nam nec fermentum nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce id libero ac orci malesuada consectetur nec quis enim."
             },{
@@ -94,7 +117,6 @@ data = [
                 summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum risus lorem, non cursus tellus consequat ut. Donec id egestas risus. Nullam ultrices justo neque, ac fermentum mauris tempor placerat. Vestibulum ut tellus sollicitudin, faucibus neque quis, suscipit lacus. Mauris dignissim felis magna, vitae tempor elit vestibulum nec. Quisque mattis blandit tellus sit amet consequat. Suspendisse libero tortor, pretium vitae cursus ut, venenatis eu neque. Nam condimentum tempor rhoncus. Nam nec fermentum nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce id libero ac orci malesuada consectetur nec quis enim."
             },{
                 url: "dailydigitalchallenge.com",
-                link: "https://dailydigitalchallenge.com/",
                 imageSrc: "https://res.cloudinary.com/da9lbyiyl/image/upload/v1622008221/Work%20Site%20Screenshots/Daily-Digi_nj6eqw.png",
                 summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum risus lorem, non cursus tellus consequat ut. Donec id egestas risus. Nullam ultrices justo neque, ac fermentum mauris tempor placerat. Vestibulum ut tellus sollicitudin, faucibus neque quis, suscipit lacus. Mauris dignissim felis magna, vitae tempor elit vestibulum nec. Quisque mattis blandit tellus sit amet consequat. Suspendisse libero tortor, pretium vitae cursus ut, venenatis eu neque. Nam condimentum tempor rhoncus. Nam nec fermentum nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce id libero ac orci malesuada consectetur nec quis enim."
             }

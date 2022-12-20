@@ -7,7 +7,9 @@ import Logo from '../../images/svg/BCLogo.svg';
 import PropTypes from "prop-types"
 import React from "react"
 import ReactLogo from '../../images/svg/ReactLogo.svg';
+import NextLogo from '../../images/svg/NextLogo.svg';
 import SassLogo from '../../images/svg/Sass.svg';
+import GSAP from '../../images/svg/GSAP.svg';
 import SocialButtons from "../SocialButtons";
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -19,22 +21,22 @@ const Header = ({ siteTitle }) => {
         <div className="about-me">
           <h1 className="text-white uppercase font-bold text-3xl">Ben Cavenagh</h1>
           <h3 className="text-gray-400">
-            <span className="uppercase">Web Developer</span>
-            {" "} at {" "} 
-            <span className="text-red-500 uppercase font-extrabold">Grubhub</span>
+            <span className="uppercase">Front-end Engineer</span>
+            {/* {" "} at {" "} 
+            <span className="text-red-500 uppercase font-extrabold">Grubhub</span> */}
           </h3>
         </div>
         <div className="favorite-tools">
           <p className="text-sky-blue font-bold text-sm text-center md:text-left">Some of my favorite tools:</p>
           <div className="tool-logos-container justify-center md:justify-start mt-1">
-            <div className="tool mx-1 md:mx-0 md:mr-2">
-              <ReactLogo/>
+            <div className="tool mx-1 md:mx-0 md:mr-2" >
+              <ReactLogo alt="React" />
             </div>
             <div className="tool mx-1 md:mx-0 md:mr-2">
-              <SassLogo/>
+              <NextLogo/>
             </div>
             <div className="tool mx-1 md:mx-0 md:mr-2">
-              <GatsbyLogo/>
+              <GSAP/>
             </div>
           </div>
         </div>
