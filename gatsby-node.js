@@ -8,6 +8,7 @@ exports.onPostBuild = ({ reporter }) => {
 exports.createPages = async ({ graphql, actions }) => {
 const { createPage } = actions
 const pageTemplate = path.resolve(`./src/templates/employerPage.js`)
+const tovalaSample = path.resolve(`./src/templates/work-samples/tovala/index.js`)
 
 data = [
     {
@@ -121,9 +122,26 @@ data = [
                 summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum risus lorem, non cursus tellus consequat ut. Donec id egestas risus. Nullam ultrices justo neque, ac fermentum mauris tempor placerat. Vestibulum ut tellus sollicitudin, faucibus neque quis, suscipit lacus. Mauris dignissim felis magna, vitae tempor elit vestibulum nec. Quisque mattis blandit tellus sit amet consequat. Suspendisse libero tortor, pretium vitae cursus ut, venenatis eu neque. Nam condimentum tempor rhoncus. Nam nec fermentum nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce id libero ac orci malesuada consectetur nec quis enim."
             }
         ]
+    },
+    {
+        path: "/samples/tovala",
+        title: "Work Sample for Tovala",
     }
 ]
 data.forEach(node => {
+    
+    if (node.path === "/samples/tovala") {
+        createPage({
+            path: `${node.path}`,
+            component: tovalaSample,
+            context: {
+                title: node.title,
+                samples: node.samples,
+            },
+        })
+        return
+    }
+
     createPage({
         path: `${node.path}`,
         component: pageTemplate,
