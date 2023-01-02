@@ -1,36 +1,62 @@
 import React from "react"
 import { Resizable } from "re-resizable"
+import styled from "styled-components"
 
-const style = {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  border: "solid 1px #ddd",
-  background: "#f0f0f0",
-}
+const Rectangle = props => {
+  const { position, width, height, color, handleDelete } = props
 
-const Rectangle = () => {
+  const style = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    background: `rgb(${color})`,
+  }
+
   return (
-    <Resizable
-      style={style}
-      defaultSize={{
-        width: 200,
-        height: 200,
-      }}
-      enable={{
-        top: false,
-        right: true,
-        bottom: true,
-        left: false,
-        topRight: false,
-        bottomRight: true,
-        bottomLeft: false,
-        topLeft: false,
-      }}
-    >
-      001
-    </Resizable>
+    <RectangleContainer position={position} color={color}>
+      <Resizable
+        style={style}
+        defaultSize={{
+          width: width,
+          height: height,
+        }}
+        enable={{
+          right: true,
+          bottom: true,
+          bottomRight: true,
+          top: false,
+          left: false,
+          topRight: false,
+          bottomLeft: false,
+          topLeft: false,
+        }}
+      >
+        <p>
+          {width},{height}
+        </p>
+      </Resizable>
+
+      <DeleteButton onClick={() => handleDelete()}>-</DeleteButton>
+    </RectangleContainer>
   )
 }
+
+const RectangleContainer = styled.div.attrs(props => ({
+  style: {
+    position: "absolute",
+    top: props.position.y,
+    left: props.position.x,
+  },
+}))``
+
+const DeleteButton = styled.button`
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+`
 
 export default Rectangle
