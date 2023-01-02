@@ -1,9 +1,9 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Resizable } from "re-resizable"
 import styled from "styled-components"
 
 const Rectangle = props => {
-  const { position, width, height, color, handleDelete } = props
+  const { position, color, handleDelete, width, height, index } = props
 
   const style = {
     display: "flex",
@@ -13,7 +13,12 @@ const Rectangle = props => {
   }
 
   return (
-    <RectangleContainer position={position} color={color}>
+    <RectangleContainer
+      position={position}
+      color={color}
+      width={width}
+      height={height}
+    >
       <Resizable
         style={style}
         defaultSize={{
@@ -31,6 +36,7 @@ const Rectangle = props => {
           topLeft: false,
         }}
       >
+        <p>{index}</p>,
         <p>
           {width},{height}
         </p>

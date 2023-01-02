@@ -53,7 +53,9 @@ const TovalaSample = ({ pageContext }) => {
             color={rectangle.color}
             width={rectangle.width}
             height={rectangle.height}
-            key={index}
+            //random key
+            key={Math.random()}
+            index={index}
             handleDelete={() => deleteRectangle(index)}
           />
         ))}
