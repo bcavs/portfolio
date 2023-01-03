@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react"
 import { Resizable } from "re-resizable"
-import { Delete, Edit, OpenWith } from "@mui/icons-material"
+import { Delete, Edit, OpenWith, ArrowDropUp } from "@mui/icons-material"
 import {
   ActionButton,
   ActionsContainer,
@@ -8,8 +8,11 @@ import {
   RectangleContainer,
   ColorSwab,
   DragHandle,
+  ColorPicker,
+  ResizeHandler,
 } from "./styled"
 import Draggable from "react-draggable"
+import { colors } from "../../helpers"
 
 const Rectangle = props => {
   const {
@@ -21,8 +24,10 @@ const Rectangle = props => {
     handleDelete,
     handleReposition,
     handleResize,
+    handleChangeColor,
   } = props
   const [isEditing, setIsEditing] = useState(false)
+  const [isColorPickerOpen, setIsColorPickerOpen] = useState(false)
   const ref = useRef()
 
   const style = {
@@ -30,16 +35,25 @@ const Rectangle = props => {
     alignItems: "center",
     justifyContent: "center",
     background: `rgb(${color})`,
+    position: "relative",
   }
 
   const handleMouseLeave = () => {
     setIsEditing(false)
+    setIsColorPickerOpen(false)
   }
 
   const handleDragStop = (e, data) => {
+    // check that position is not off the screen then set the x and y for the rectangle
     handleReposition(index, {
-      x: ref.current.getBoundingClientRect().x,
-      y: ref.current.getBoundingClientRect().y,
+      x:
+        ref.current.getBoundingClientRect().x < 0
+          ? 0
+          : ref.current.getBoundingClientRect().x,
+      y:
+        ref.current.getBoundingClientRect().y < 0
+          ? 0
+          : ref.current.getBoundingClientRect().y,
     })
   }
 
@@ -79,12 +93,11 @@ const Rectangle = props => {
           <DragHandle className="drag-handle">
             <OpenWith fontSize="small" />
           </DragHandle>
-          <p>{index}</p>
           <ActionsContainer>
             {isEditing ? (
               <>
                 <ColorSwab
-                  onClick={() => console.log("change color")}
+                  onClick={() => setIsColorPickerOpen(true)}
                   color={`rgb(${color})`}
                 />
                 <DeleteButton onClick={() => handleDelete()}>
@@ -97,6 +110,22 @@ const Rectangle = props => {
               </ActionButton>
             )}
           </ActionsContainer>
+          {isColorPickerOpen && (
+            <ColorPicker>
+              <>
+                {colors.map((color, colorIndex) => (
+                  <ColorSwab
+                    color={`rgb(${color})`}
+                    onClick={() => handleChangeColor(index, colorIndex)}
+                  />
+                ))}
+              </>
+            </ColorPicker>
+          )}
+          <p>{index}</p>
+          <ResizeHandler>
+            <ArrowDropUp fontSize="small" />
+          </ResizeHandler>
         </Resizable>
       </RectangleContainer>
     </Draggable>

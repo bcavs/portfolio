@@ -1,10 +1,22 @@
 import React, { useState, useEffect } from "react"
 import { Rectangle } from "./components"
-import { randomColor, saveLayout } from "./helpers"
-import styled from "styled-components"
+import { randomColor, colors } from "./helpers"
+import { Delete, CloudDownload } from "@mui/icons-material"
+import {
+  Container,
+  ButtonContainer,
+  AddButton,
+  SaveButton,
+  ClearButton,
+  LayoutsContainer,
+  LayoutsTitle,
+  LayoutsList,
+  Actions,
+} from "./styled"
 
 const TovalaSample = ({ pageContext }) => {
   const [rectangles, setRectangles] = useState([])
+  const [layouts, setLayouts] = useState([])
 
   // get the screen width and height
   const [canvasWidth, setCanvasWidth] = useState(0)
@@ -13,14 +25,21 @@ const TovalaSample = ({ pageContext }) => {
   useEffect(() => {
     setCanvasWidth(window.innerWidth)
     setCanvasHeight(window.innerHeight)
+
+    // get layouts from local storage
+    const layouts = JSON.parse(localStorage.getItem("layouts"))
+
+    if (layouts) {
+      setLayouts(layouts)
+    }
   }, [])
 
-  const changeRectangleColor = (index, color) => {
+  const changeRectangleColor = (index, colorIndex) => {
     const newRectangles = rectangles.map((rectangle, i) => {
       if (i === index) {
         return {
           ...rectangle,
-          color: color,
+          color: colors[colorIndex],
         }
       }
       return rectangle
@@ -28,12 +47,42 @@ const TovalaSample = ({ pageContext }) => {
     setRectangles(newRectangles)
   }
 
+  const saveLayout = rectangles => {
+    const layoutName = prompt("Enter a name for this layout")
+
+    if (layoutName) {
+      // strip trailing and leading whitespace
+      const trimmedName = layoutName.trim()
+
+      // loop through the rectangles and save the necessary values to an array
+      const rectanglesToSave = rectangles.map(rectangle => {
+        return {
+          position: {
+            x: rectangle.position.x,
+            y: rectangle.position.y,
+          },
+          color: rectangle.color,
+          width: rectangle.width,
+          height: rectangle.height,
+        }
+      })
+
+      // save the layout to a layout object in local storage
+      const layouts = localStorage.getItem("layouts")
+      // if layouts exist then add the new layout to the object otherwise create an empty object
+      const layoutObject = layouts ? JSON.parse(layouts) : {}
+      layoutObject[trimmedName] = rectanglesToSave
+      localStorage.setItem("layouts", JSON.stringify(layoutObject))
+      setLayouts(layoutObject)
+    }
+  }
+
   const addRectangle = () => {
     const color = randomColor()
 
-    // random width and height
-    const width = Math.floor(Math.random() * 200)
-    const height = Math.floor(Math.random() * 200)
+    // random width and height minimum of 50px
+    const width = Math.floor(Math.random() * 100) + 50
+    const height = Math.floor(Math.random() * 100) + 50
 
     // get a random position for the rectangle that is within the canvas
     const randomPosition = {
@@ -58,7 +107,6 @@ const TovalaSample = ({ pageContext }) => {
   }
 
   const handleReposition = (index, position) => {
-    console.log("repositioning", index, position)
     const newRectangles = rectangles.map((rectangle, i) => {
       if (i === index) {
         return {
@@ -72,7 +120,6 @@ const TovalaSample = ({ pageContext }) => {
   }
 
   const handleResize = (index, size) => {
-    console.log("resizing", index, size)
     const newRectangles = rectangles.map((rectangle, i) => {
       if (i === index) {
         return {
@@ -84,6 +131,26 @@ const TovalaSample = ({ pageContext }) => {
       return rectangle
     })
     setRectangles(newRectangles)
+  }
+
+  const clearCanvas = () => {
+    setRectangles([])
+  }
+
+  const loadLayout = layout => {
+    const layoutToLoad = layouts[layout]
+    setRectangles(layoutToLoad)
+  }
+
+  const deleteLayout = layout => {
+    //remove layout from layouts object by key
+    const newLayouts = { ...layouts }
+    delete newLayouts[layout]
+
+    // save the new layouts object to local storage
+    localStorage.setItem("layouts", JSON.stringify(newLayouts))
+    setLayouts(newLayouts)
+    clearCanvas()
   }
 
   return (
@@ -98,45 +165,43 @@ const TovalaSample = ({ pageContext }) => {
             key={Math.random()}
             index={index}
             handleDelete={() => deleteRectangle(index)}
-            handleChangeColor={color => changeRectangleColor(index, color)}
+            handleChangeColor={changeRectangleColor}
             handleReposition={handleReposition}
             handleResize={handleResize}
           />
         ))}
       </Container>
+      {layouts && (
+        <LayoutsContainer>
+          <LayoutsTitle>Layouts</LayoutsTitle>
+          <LayoutsList>
+            {Object.keys(layouts).map((layout, index) => {
+              return (
+                <li key={index}>
+                  <p>{layout}</p>
+                  <Actions>
+                    <button onClick={() => loadLayout(layout)}>
+                      <CloudDownload fontSize="small" />
+                    </button>
+                    <button onClick={() => deleteLayout(layout)}>
+                      <Delete fontSize="small" />
+                    </button>
+                  </Actions>
+                </li>
+              )
+            })}
+          </LayoutsList>
+        </LayoutsContainer>
+      )}
       <ButtonContainer>
         <AddButton onClick={() => addRectangle()}>Add Rectangle</AddButton>
         <SaveButton onClick={() => saveLayout(rectangles)}>
           Save Layout
         </SaveButton>
+        <ClearButton onClick={() => clearCanvas()}>Clear Canvas</ClearButton>
       </ButtonContainer>
     </>
   )
 }
-
-const Container = styled.div`
-  width: 100%;
-  height: 100vh;
-  background-color: aliceblue;
-  overflow: hidden;
-  position: relative;
-`
-
-const ButtonContainer = styled.div`
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-`
-
-const AddButton = styled.button`
-  padding: 10px 20px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 0 10px;
-`
-
-const SaveButton = styled(AddButton)``
 
 export default TovalaSample
