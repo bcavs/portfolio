@@ -28,24 +28,40 @@ export const ButtonContainer = styled.div`
   right: 20px;
   z-index: 2;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+  }
 `
 
 export const AddButton = styled.button`
-  padding: 10px 20px;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
   cursor: pointer;
-  margin: 0 10px;
+  margin: 5px 10px;
   transition: all 0.2s ease-in-out;
   display: flex;
   align-items: center;
+  font-size: 12px;
+  padding: 5px 10px;
+  svg {
+    width: 15px;
+  }
   &:hover {
     background-color: #ddd;
   }
   p {
     margin-left: 5px;
+  }
+  @media (min-width: 768px) {
+    margin: 0 10px;
+    font-size: 14px;
+    padding: 10px 20px;
+    svg {
+      width: 20px;
+    }
   }
 `
 
