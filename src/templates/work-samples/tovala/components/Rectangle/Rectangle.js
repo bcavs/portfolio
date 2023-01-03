@@ -10,9 +10,11 @@ import {
   DragHandle,
   ColorPicker,
   ResizeHandler,
+  NoteNumber,
 } from "./styled"
 import Draggable from "react-draggable"
 import { colors } from "../../helpers"
+import { TextareaAutosize } from "@mui/material"
 
 const Rectangle = props => {
   const {
@@ -21,10 +23,12 @@ const Rectangle = props => {
     width,
     height,
     index,
+    note,
     handleDelete,
     handleReposition,
     handleResize,
     handleChangeColor,
+    handleChangeNoteText,
   } = props
   const [isEditing, setIsEditing] = useState(false)
   const [isColorPickerOpen, setIsColorPickerOpen] = useState(false)
@@ -65,6 +69,8 @@ const Rectangle = props => {
         width={width}
         height={height}
         onMouseLeave={handleMouseLeave}
+        // when mouse clicks outside of the rectangle, handle the note text change to avoid updating the state and rerendering every time the user types
+        onBlur={e => handleChangeNoteText(index, e.target.value)}
         ref={ref}
       >
         <Resizable
@@ -122,7 +128,19 @@ const Rectangle = props => {
               </>
             </ColorPicker>
           )}
-          <p>{index}</p>
+          <TextareaAutosize
+            placeholder="Add a note"
+            style={{
+              width: "100%",
+              height: "100%",
+              border: "none",
+              outline: "none",
+              backgroundColor: "transparent",
+              padding: "10px",
+            }}
+            value={note}
+          />
+          <NoteNumber>{index + 1}</NoteNumber>
           <ResizeHandler>
             <ArrowDropUp fontSize="small" />
           </ResizeHandler>

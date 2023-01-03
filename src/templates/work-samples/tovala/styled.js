@@ -1,17 +1,32 @@
 import styled, { css } from "styled-components"
 
 export const Container = styled.div`
+  background-color: aliceblue;
+  .tovala-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: auto;
+    opacity: 0.5;
+    z-index: 0;
+  }
+`
+
+export const CanvasContainer = styled.div`
   width: 100%;
   height: 100vh;
-  background-color: aliceblue;
   overflow: hidden;
   position: relative;
+  z-index: 1;
 `
 
 export const ButtonContainer = styled.div`
   position: absolute;
   bottom: 20px;
   right: 20px;
+  z-index: 2;
 `
 
 export const AddButton = styled.button`
@@ -21,6 +36,10 @@ export const AddButton = styled.button`
   border-radius: 5px;
   cursor: pointer;
   margin: 0 10px;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background-color: #ddd;
+  }
 `
 
 export const SaveButton = styled(AddButton)``
@@ -36,6 +55,7 @@ export const LayoutsContainer = styled.div`
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 10px;
+  z-index: 2;
 `
 
 export const LayoutsTitle = styled.h4`

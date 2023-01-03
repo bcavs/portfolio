@@ -84,6 +84,14 @@ export const ResizeHandler = styled.div`
   transform: rotate(135deg);
 `
 
+export const NoteNumber = styled.p`
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+  font-size: 12px;
+  color: black;
+`
+
 export const RectangleContainer = styled.div.attrs(props => ({
   style: {
     position: "absolute",
@@ -95,5 +103,8 @@ export const RectangleContainer = styled.div.attrs(props => ({
     ${ActionsContainer}, ${DragHandle}, ${ResizeHandler} {
       display: flex;
     }
+  }
+  textarea::placeholder {
+    color: white;
   }
 `

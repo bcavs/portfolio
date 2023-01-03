@@ -4,6 +4,7 @@ import { randomColor, colors } from "./helpers"
 import { Delete, CloudDownload } from "@mui/icons-material"
 import {
   Container,
+  CanvasContainer,
   ButtonContainer,
   AddButton,
   SaveButton,
@@ -13,6 +14,8 @@ import {
   LayoutsList,
   Actions,
 } from "./styled"
+import TovalaLogo from "../../../images/svg/Tovala.svg"
+import SEO from "../../../components/seo"
 
 const TovalaSample = ({ pageContext }) => {
   const [rectangles, setRectangles] = useState([])
@@ -32,7 +35,19 @@ const TovalaSample = ({ pageContext }) => {
     if (layouts) {
       setLayouts(layouts)
     }
+
+    // get draft from local storage
+    const draft = JSON.parse(localStorage.getItem("draft"))
+
+    if (draft) {
+      setRectangles(draft)
+    }
   }, [])
+
+  // whenever rectangels changes save the rectangles to local storage as a draft
+  useEffect(() => {
+    localStorage.setItem("draft", JSON.stringify(rectangles))
+  }, [rectangles])
 
   const changeRectangleColor = (index, colorIndex) => {
     const newRectangles = rectangles.map((rectangle, i) => {
@@ -40,6 +55,19 @@ const TovalaSample = ({ pageContext }) => {
         return {
           ...rectangle,
           color: colors[colorIndex],
+        }
+      }
+      return rectangle
+    })
+    setRectangles(newRectangles)
+  }
+
+  const handleChangeNoteText = (index, text) => {
+    const newRectangles = rectangles.map((rectangle, i) => {
+      if (i === index) {
+        return {
+          ...rectangle,
+          note: text,
         }
       }
       return rectangle
@@ -64,6 +92,7 @@ const TovalaSample = ({ pageContext }) => {
           color: rectangle.color,
           width: rectangle.width,
           height: rectangle.height,
+          note: rectangle.note,
         }
       })
 
@@ -150,27 +179,30 @@ const TovalaSample = ({ pageContext }) => {
     // save the new layouts object to local storage
     localStorage.setItem("layouts", JSON.stringify(newLayouts))
     setLayouts(newLayouts)
-    clearCanvas()
   }
 
   return (
-    <>
-      <Container>
+    <Container>
+      <SEO title={pageContext.title} />
+      <CanvasContainer>
         {rectangles.map((rectangle, index) => (
           <Rectangle
             position={{ x: rectangle.position.x, y: rectangle.position.y }}
             color={rectangle.color}
             width={rectangle.width}
             height={rectangle.height}
+            note={rectangle.note}
             key={Math.random()}
             index={index}
             handleDelete={() => deleteRectangle(index)}
             handleChangeColor={changeRectangleColor}
             handleReposition={handleReposition}
             handleResize={handleResize}
+            handleChangeNoteText={handleChangeNoteText}
           />
         ))}
-      </Container>
+      </CanvasContainer>
+      <TovalaLogo className="tovala-logo" />
       {layouts && (
         <LayoutsContainer>
           <LayoutsTitle>Layouts</LayoutsTitle>
@@ -200,7 +232,7 @@ const TovalaSample = ({ pageContext }) => {
         </SaveButton>
         <ClearButton onClick={() => clearCanvas()}>Clear Canvas</ClearButton>
       </ButtonContainer>
-    </>
+    </Container>
   )
 }
 
