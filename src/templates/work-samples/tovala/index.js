@@ -109,9 +109,8 @@ const TovalaSample = ({ pageContext }) => {
   const addRectangle = () => {
     const color = randomColor()
 
-    // random width and height minimum of 50px
-    const width = Math.floor(Math.random() * 100) + 50
-    const height = Math.floor(Math.random() * 100) + 50
+    const width = 200
+    const height = 200
 
     // get a random position for the rectangle that is within the canvas
     const randomPosition = {

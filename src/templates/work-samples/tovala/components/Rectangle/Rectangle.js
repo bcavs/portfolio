@@ -96,9 +96,7 @@ const Rectangle = props => {
             })
           }}
         >
-          <DragHandle className="drag-handle">
-            <OpenWith fontSize="small" />
-          </DragHandle>
+          <DragHandle className="drag-handle" />
           <ActionsContainer>
             {isEditing ? (
               <>
@@ -136,7 +134,7 @@ const Rectangle = props => {
               border: "none",
               outline: "none",
               backgroundColor: "transparent",
-              padding: "10px",
+              padding: "25px 10px 10px",
             }}
             value={note}
           />

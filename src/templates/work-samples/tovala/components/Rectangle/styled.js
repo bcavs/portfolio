@@ -63,15 +63,11 @@ export const DragHandle = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  border-radius: 50px;
-  padding: 5px;
-  align-items: center;
-  justify-content: center;
-  display: none;
+  width: 100%;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
   cursor: move;
-  border: 1px solid lightgray;
+  display: none;
 `
 
 export const ResizeHandler = styled.div`
@@ -99,6 +95,7 @@ export const RectangleContainer = styled.div.attrs(props => ({
     left: props.position.x,
   },
 }))`
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   &:hover {
     ${ActionsContainer}, ${DragHandle}, ${ResizeHandler} {
       display: flex;
