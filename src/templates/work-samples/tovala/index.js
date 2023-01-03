@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Rectangle } from "./components"
 import { randomColor, colors } from "./helpers"
-import { Delete, CloudDownload } from "@mui/icons-material"
+import { Delete, CloudDownload, SaveAlt, Add } from "@mui/icons-material"
 import {
   Container,
   CanvasContainer,
@@ -14,12 +14,13 @@ import {
   LayoutsList,
   Actions,
 } from "./styled"
+import { isEmpty } from "lodash"
 import TovalaLogo from "../../../images/svg/Tovala.svg"
 import SEO from "../../../components/seo"
 
 const TovalaSample = ({ pageContext }) => {
   const [rectangles, setRectangles] = useState([])
-  const [layouts, setLayouts] = useState([])
+  const [layouts, setLayouts] = useState(null)
 
   // get the screen width and height
   const [canvasWidth, setCanvasWidth] = useState(0)
@@ -202,9 +203,9 @@ const TovalaSample = ({ pageContext }) => {
         ))}
       </CanvasContainer>
       <TovalaLogo className="tovala-logo" />
-      {layouts && (
+      {!isEmpty(layouts) && (
         <LayoutsContainer>
-          <LayoutsTitle>Layouts</LayoutsTitle>
+          <LayoutsTitle>Saved Layouts</LayoutsTitle>
           <LayoutsList>
             {Object.keys(layouts).map((layout, index) => {
               return (
@@ -225,11 +226,17 @@ const TovalaSample = ({ pageContext }) => {
         </LayoutsContainer>
       )}
       <ButtonContainer>
-        <AddButton onClick={() => addRectangle()}>Add Rectangle</AddButton>
+        <AddButton onClick={() => addRectangle()}>
+          <Add fontSize="small" />
+          <p>Add Note</p>
+        </AddButton>
         <SaveButton onClick={() => saveLayout(rectangles)}>
-          Save Layout
+          <SaveAlt fontSize="small" /> <p>Save Canvas</p>
         </SaveButton>
-        <ClearButton onClick={() => clearCanvas()}>Clear Canvas</ClearButton>
+        <ClearButton onClick={() => clearCanvas()}>
+          <Delete fontSize="small" />
+          <p>Clear Canvas</p>
+        </ClearButton>
       </ButtonContainer>
     </Container>
   )

@@ -27,6 +27,8 @@ export const ButtonContainer = styled.div`
   bottom: 20px;
   right: 20px;
   z-index: 2;
+  display: flex;
+  align-items: center;
 `
 
 export const AddButton = styled.button`
@@ -37,8 +39,13 @@ export const AddButton = styled.button`
   cursor: pointer;
   margin: 0 10px;
   transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
   &:hover {
     background-color: #ddd;
+  }
+  p {
+    margin-left: 5px;
   }
 `
 
