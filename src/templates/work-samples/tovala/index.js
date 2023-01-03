@@ -15,6 +15,19 @@ const TovalaSample = ({ pageContext }) => {
     setCanvasHeight(window.innerHeight)
   }, [])
 
+  const changeRectangleColor = (index, color) => {
+    const newRectangles = rectangles.map((rectangle, i) => {
+      if (i === index) {
+        return {
+          ...rectangle,
+          color: color,
+        }
+      }
+      return rectangle
+    })
+    setRectangles(newRectangles)
+  }
+
   const addRectangle = () => {
     const color = randomColor()
 
@@ -44,6 +57,35 @@ const TovalaSample = ({ pageContext }) => {
     setRectangles(newRectangles)
   }
 
+  const handleReposition = (index, position) => {
+    console.log("repositioning", index, position)
+    const newRectangles = rectangles.map((rectangle, i) => {
+      if (i === index) {
+        return {
+          ...rectangle,
+          position,
+        }
+      }
+      return rectangle
+    })
+    setRectangles(newRectangles)
+  }
+
+  const handleResize = (index, size) => {
+    console.log("resizing", index, size)
+    const newRectangles = rectangles.map((rectangle, i) => {
+      if (i === index) {
+        return {
+          ...rectangle,
+          width: size.width,
+          height: size.height,
+        }
+      }
+      return rectangle
+    })
+    setRectangles(newRectangles)
+  }
+
   return (
     <>
       <Container>
@@ -53,10 +95,12 @@ const TovalaSample = ({ pageContext }) => {
             color={rectangle.color}
             width={rectangle.width}
             height={rectangle.height}
-            //random key
             key={Math.random()}
             index={index}
             handleDelete={() => deleteRectangle(index)}
+            handleChangeColor={color => changeRectangleColor(index, color)}
+            handleReposition={handleReposition}
+            handleResize={handleResize}
           />
         ))}
       </Container>
