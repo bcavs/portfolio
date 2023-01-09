@@ -32,6 +32,7 @@ const Rectangle = props => {
   } = props
   const [isEditing, setIsEditing] = useState(false)
   const [isColorPickerOpen, setIsColorPickerOpen] = useState(false)
+  const [noteValue, setNoteValue] = useState(note)
   const ref = useRef()
 
   const style = {
@@ -61,6 +62,10 @@ const Rectangle = props => {
     })
   }
 
+  const handleNoteText = () => {
+    handleChangeNoteText(index, noteValue)
+  }
+
   return (
     <Draggable onStop={handleDragStop} handle={".drag-handle"}>
       <RectangleContainer
@@ -70,7 +75,7 @@ const Rectangle = props => {
         height={height}
         onMouseLeave={handleMouseLeave}
         // when mouse clicks outside of the rectangle, handle the note text change to avoid updating the state and rerendering every time the user types
-        onBlur={e => handleChangeNoteText(index, e.target.value)}
+        onBlur={handleNoteText}
         ref={ref}
       >
         <Resizable
@@ -136,7 +141,8 @@ const Rectangle = props => {
               backgroundColor: "transparent",
               padding: "25px 10px 10px",
             }}
-            value={note}
+            value={noteValue}
+            onChange={e => setNoteValue(e.target.value)}
           />
           <NoteNumber>{index + 1}</NoteNumber>
           <ResizeHandler>
