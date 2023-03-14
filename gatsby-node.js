@@ -11,6 +11,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const tovalaSample = path.resolve(
     `./src/templates/work-samples/tovala/index.js`
   )
+  const enigma = path.resolve(`./src/templates/playground/enigma/index.js`)
 
   data = [
     {
@@ -176,6 +177,10 @@ exports.createPages = async ({ graphql, actions }) => {
       path: "/samples/tovala",
       title: "Tovala Work Sample",
     },
+    {
+      path: "/playground/enigma",
+      title: "Enigma Playground",
+    },
   ]
   data.forEach(node => {
     if (node.path === "/samples/tovala") {
@@ -184,7 +189,17 @@ exports.createPages = async ({ graphql, actions }) => {
         component: tovalaSample,
         context: {
           title: node.title,
-          samples: node.samples,
+        },
+      })
+      return
+    }
+
+    if (node.path === "/playground/enigma") {
+      createPage({
+        path: `${node.path}`,
+        component: enigma,
+        context: {
+          title: node.title,
         },
       })
       return
